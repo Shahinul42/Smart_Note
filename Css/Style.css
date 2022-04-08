@@ -1,0 +1,80 @@
+.Container {
+    max-width: 98%;
+    margin: 0 auto;
+}
+
+.Top_heading {
+    text-align: center;
+    padding: 0 0 .2rem 0rem;
+    user-select: none;
+}
+
+.Cols {
+    width: 100%;
+    display: flex;
+    align-items: top;
+
+}
+
+.Row_0 section {
+    border: 1px solid;
+    min-height: 80vh;
+}
+
+.Row_0 section {
+    text-align: center;
+}
+
+.Row_0 section h6 {
+    user-select: none;
+    margin-bottom: 0;
+}
+
+.Row_0 section h6::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background: #000;
+    display: flex;
+}
+
+.Col.Cro {
+    width: 7%;
+}
+
+.Col.Description {
+    width: 47%;
+}
+
+.Col.Piece {
+    width: 11%;
+}
+
+.Col.Price {
+    width: 15%;
+}
+
+.Col.Total {
+    width: 20%;
+}
+
+/* DYNAMIC ROW */
+.Dynamic_row{
+    border-bottom: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+textarea{
+    background: none;
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: 0;
+    margin-top: 0;
+    resize: none;
+    font-size: 16px;
+    scrollbar-width: 0;
+    padding: 0 2px;
+    text-transform: capitalize;
+}
