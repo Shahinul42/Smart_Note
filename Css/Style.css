@@ -1,3 +1,4 @@
+
 .Container {
     max-width: 98%;
     margin: 0 auto;
@@ -64,8 +65,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 25px;
 }
-textarea{
+textarea, input, strong{
     background: none;
     border: none;
     width: 100%;
@@ -77,4 +79,36 @@ textarea{
     scrollbar-width: 0;
     padding: 0 2px;
     text-transform: capitalize;
+}
+textarea::-webkit-scrollbar{
+    width: 0;
+}
+
+.Total_of_totals{
+    border: .1rem solid #000;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+}
+
+.Total_of_totals .Title{
+    width: 80%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.Total_of_totals .Number{
+    width: 20%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.Total_of_totals h6{
+    font-weight: 750;
+    color:#d33100;
+    display: flex;
+    align-items: center;
+    padding: .3rem;
+    margin:0;
 }
