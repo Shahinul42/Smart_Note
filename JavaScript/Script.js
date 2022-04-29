@@ -2,15 +2,11 @@
 
 let body = document.querySelector("body");
 let Cro = document.querySelector("section.Cro");
-<<<<<<< HEAD
 let Description = document.querySelector("section.Description");
 let Pieces = document.querySelector("section.Piece");
 let Price = document.querySelector("section.Price");
 let Total_col = document.querySelector("section.Total");
 let Cromic_nong = 1;
-=======
-let a = 1;
->>>>>>> a7f9bfb7882bd01e13ac159bb31cfe34b3d4d7ff
 
 /////////////////////////////////////////////////////
 /////////// CREATE DYNAMICALLY ELEMENTS /////////////
@@ -18,7 +14,6 @@ body.addEventListener("dblclick", () => {
     // console.log("dbl click success")
     //-------- CROMIC NONG -----------//
 
-<<<<<<< HEAD
     let Dynamic_row_strong = document.createElement("strong");
     Cro.appendChild(Dynamic_row_strong);
     Dynamic_row_strong.classList.add("Dynamic_row");
@@ -148,15 +143,5 @@ Dynamic_rows_Price.forEach(Element => {
 
     })
 })
-=======
-body.addEventListener("dblclick", () => {
-    console.log("dbl click success")
-    // CREATE DYNAMIC_strong element
-    let Dynamic_row_strong = document.createElement("strong");
-    Cro.appendChild(Dynamic_row_strong);
-    Dynamic_row_strong.classList.add("Dynamic_row");
-    a = a+1;
-    Dynamic_row_strong.innerText = a;
->>>>>>> a7f9bfb7882bd01e13ac159bb31cfe34b3d4d7ff
 
 })
