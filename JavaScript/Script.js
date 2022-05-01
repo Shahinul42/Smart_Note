@@ -43,7 +43,7 @@ body.addEventListener("dblclick", () => {
     Price_row.classList.add("Dynamic_row");
 
     //-------- ------------ -----------//
-    //-------- PRICE -----------//
+    //-------- TOTAL -----------//
 
     let Total_row = document.createElement("strong");
     Total_col.appendChild(Total_row);
@@ -68,6 +68,10 @@ body.addEventListener("click", () => {
     let Dynamic_rows_Total = document.querySelectorAll(".Total > .Dynamic_row");
     Dynamic_rows_Total = Array.from(Dynamic_rows_Total);
 
+    let Totals_value = document.querySelectorAll(".Total > .Dynamic_row")
+    Totals_value = Array.from(Totals_value);
+
+
     let Dynamic_rows_textarea = document.querySelectorAll(".Description > .Dynamic_row");
     Dynamic_rows_textarea = Array.from(Dynamic_rows_textarea);//MAKE NORMAL ARRAY
 
@@ -76,7 +80,8 @@ body.addEventListener("click", () => {
             Element.style.height = `26px`;//MAKE DEFAULT HEIGHT
             SC_height = (e.target.scrollHeight)//INITIALIZE T.AREA HEIGHT
 
-            Element.style.height = `${SC_height}px`;//SET HEIGHT DYNAMICALLY 
+            Element.style.height = `${SC_height}px`;//SET HEIGHT DYNAMICALLY
+            // console.log(typeof Element.value)
 
             let Cromic_of_row = Dynamic_rows_textarea.indexOf(Element)// INITIALIZE CROMIC OF LINES
             // console.log(Cromic_of_row)
@@ -107,6 +112,11 @@ body.addEventListener("click", () => {
     //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////
     ////////// MAKE SURE (PIECES * PRICE = TOTAL) ////////
 
+    var New_arr = [];
+    let Total_of_totals_value;
+    let Total_of_totals_dis;
+    let Total_str;
+
     //==== WORK ON PIECE =======//
     Dynamic_rows_Pieces.forEach(Element => {
 
@@ -117,31 +127,68 @@ body.addEventListener("click", () => {
             let Piece = Number(Dynamic_rows_Pieces[Piece_row_no].value)
             let Price = Number(Dynamic_rows_Price[Piece_row_no].value);
             let Total = Piece * Price;
-            // let Total_str = toString(Total)
 
+
+            // console.log(Total_str)
             Dynamic_rows_Total[Piece_row_no].innerText = Total
-            // console.log(Total)
+
+
+            // console.log(Totals_value)
+
+            New_arr = [];
+            for (let b of Totals_value) {
+                b = Number(b.innerText)
+                New_arr.push(b)
+                Total_of_totals_value = New_arr.reduce((acc, val) => { return acc + val; }, 0)
+            }
+
+            // console.log(Total_of_totals_value)
+            Total_of_totals_dis = document.querySelector(".Number_div > .Total_of_Totals");
+
+            Total_of_totals_value = Total_of_totals_value.toLocaleString("en-US");
+            // console.log(Total_of_totals_value)
+
+            Total_of_totals_dis.innerText = Total_of_totals_value;
+            if (Total_of_totals_dis.innerText == "0") {
+                Total_of_totals_dis.innerText = "0000";
+            }
+
 
         })
     })
-//================= =============== =========//
-//========= WORK ON PRICE =========//
+    //================= =============== =========//
+    //========= WORK ON PRICE =========//
 
-Dynamic_rows_Price.forEach(Element => {
+    Dynamic_rows_Price.forEach(Element => {
 
-    Element.addEventListener("keyup", () => {
-        // console.log(Element)
-        let Price_row_no = Dynamic_rows_Price.indexOf(Element);
+        Element.addEventListener("keyup", () => {
+            // console.log(Element)
+            let Price_row_no = Dynamic_rows_Price.indexOf(Element);
 
-        let Piece = Number(Dynamic_rows_Pieces[Price_row_no].value)
-        let Price = Number(Dynamic_rows_Price[Price_row_no].value);
-        let Total = Piece * Price;
-        // let Total_str = toString(Total)
+            let Piece = Number(Dynamic_rows_Pieces[Price_row_no].value)
+            let Price = Number(Dynamic_rows_Price[Price_row_no].value);
+            let Total = Piece * Price;
+            Dynamic_rows_Total[Price_row_no].innerText = Total
 
-        Dynamic_rows_Total[Price_row_no].innerText = Total
-        // console.log(Total)
+            New_arr = [];
+            for (let b of Totals_value) {
+                b = Number(b.innerText)
+                New_arr.push(b)
+                Total_of_totals_value = New_arr.reduce((acc, val) => { return acc + val; }, 0)
+            }
 
+            // console.log(Total_of_totals_value)
+            Total_of_totals_dis = document.querySelector(".Number_div > .Total_of_Totals");
+
+            Total_of_totals_value = Total_of_totals_value.toLocaleString("en-US");
+            // console.log(Total_of_totals_value)
+
+            Total_of_totals_dis.innerText = Total_of_totals_value;
+            if (Total_of_totals_dis.innerText == "0") {
+                Total_of_totals_dis.innerText = "0000";
+            }
+
+        })
     })
-})
 
 })

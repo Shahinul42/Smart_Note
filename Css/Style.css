@@ -66,6 +66,7 @@
     align-items: center;
     justify-content: center;
     height: 25px;
+    max-height: 100px;
 }
 textarea, input, strong{
     background: none;
@@ -92,13 +93,15 @@ textarea::-webkit-scrollbar{
     text-align: center;
 }
 
-.Total_of_totals .Title{
+.Total_of_totals .Title_div{
     width: 80%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+    position: relative;
 }
-.Total_of_totals .Number{
+.Total_of_totals .Title_div h6{
+    position:absolute;
+    right: 20px;
+}
+.Total_of_totals .Number_div{
     width: 20%;
     text-align: center;
     display: flex;
