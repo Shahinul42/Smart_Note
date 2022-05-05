@@ -1,4 +1,3 @@
-
 .Container {
     max-width: 98%;
     margin: 0 auto;
@@ -60,7 +59,7 @@
 }
 
 /* DYNAMIC ROW */
-.Dynamic_row{
+.Dynamic_row {
     border-bottom: 1px solid #000;
     display: flex;
     align-items: center;
@@ -68,7 +67,10 @@
     height: 25px;
     max-height: 100px;
 }
-textarea, input, strong{
+
+textarea,
+input,
+strong {
     background: none;
     border: none;
     width: 100%;
@@ -81,11 +83,16 @@ textarea, input, strong{
     padding: 0 2px;
     text-transform: capitalize;
 }
-textarea::-webkit-scrollbar{
+
+textarea::-webkit-scrollbar {
     width: 0;
 }
 
-.Total_of_totals{
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.Total_of_totals {
     border: .1rem solid #000;
     display: flex;
     justify-content: space-between;
@@ -93,25 +100,28 @@ textarea::-webkit-scrollbar{
     text-align: center;
 }
 
-.Total_of_totals .Title_div{
+.Total_of_totals .Title_div {
     width: 80%;
     position: relative;
 }
-.Total_of_totals .Title_div h6{
-    position:absolute;
+
+.Total_of_totals .Title_div h6 {
+    position: absolute;
     right: 20px;
 }
-.Total_of_totals .Number_div{
+
+.Total_of_totals .Number_div {
     width: 20%;
     text-align: center;
     display: flex;
     justify-content: center;
 }
-.Total_of_totals h6{
+
+.Total_of_totals h6 {
     font-weight: 750;
-    color:#d33100;
+    color: #d33100;
     display: flex;
     align-items: center;
     padding: .3rem;
-    margin:0;
+    margin: 0;
 }
